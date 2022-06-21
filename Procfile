@@ -1,0 +1,1 @@
+web: projectTest1.wsgi --log-file -
