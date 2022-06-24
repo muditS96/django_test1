@@ -1,0 +1,23 @@
+{% comment %} {% load static%} {% endcomment %}
+<!DOCTYPE html>
+  <html>
+    <h1 style="color :White;"> PATIENT DETAILS PAGE</h1>
+    <head>
+
+        
+    </head>     
+    {% comment %} <body style="background-image: url({% static 'images/bg-01.jpg' %});"> {% endcomment %}
+  
+     <li style="color :BLACK;">Hello   {{name}} </li>
+
+  
+       <body bgcolor="BLUE"> 
+    {% block content %}
+    {%  endblock  %}
+  
+       <h1 style="color :White;">This is Patient details page</h1>
+    </body>
+    <button type="button" class="login100-form-btn"  >
+      <a href="{% url 'login' %}" >Logout</a> 
+  </button> 
+  </html>

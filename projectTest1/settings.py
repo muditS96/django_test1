@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-09qgyw+4*+9si7$2t!41w9(-t^c=j8g*n)zo_bb-^6cy^um^ts'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -39,11 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'appTest1',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -56,7 +58,7 @@ ROOT_URLCONF = 'projectTest1.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -77,15 +79,23 @@ WSGI_APPLICATION = 'projectTest1.wsgi.application'
 
 DATABASES = {
     'default': {
-         
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dv6n3p8rotspk',
-        'USER': 'sbxpvhhodutagr',
-        'PASSWORD':'e71de558a36bf8c471d500881eb062f6dacd143c041068a3d61f68ad0ba11b04', 
-        'HOST': 'ec2-3-224-8-189.compute-1.amazonaws.com',
-        'PORT': '5432'
-    }
+        'NAME': 'testdb',
+        'USER': 'postgres',
+        'PASSWORD':'8726', 
+        'HOST': 'localhost'
+    }    
 }
+
+         
+        # 'ENGINE': 'django.db.backends.postgresql',
+        # 'NAME': 'dv6n3p8rotspk',
+        # 'USER': 'sbxpvhhodutagr',
+        # 'PASSWORD':'e71de558a36bf8c471d500881eb062f6dacd143c041068a3d61f68ad0ba11b04', 
+        # 'HOST': 'ec2-3-224-8-189.compute-1.amazonaws.com',
+        # 'PORT': '5432'
+    
+
 
 
 
@@ -127,16 +137,17 @@ USE_TZ = True
 
 STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
 STATIC_URL = '/static/'
-# STATICFILES_DIRS=[
-#     os.path.join(BASE_DIR,'static')
-# ]
+STATICFILES_DIRS=[
+    os.path.join(BASE_DIR,'static')
+]
 
-django_heroku.settings(locals())
-
-
+# django_heroku.settings(locals())
 
 
 
+
+MEDIA_URL='/media/'
+MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
