@@ -80,20 +80,21 @@ WSGI_APPLICATION = 'projectTest1.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'testdb',
-        'USER': 'postgres',
-        'PASSWORD':'8726', 
-        'HOST': 'localhost'
+         'NAME': 'dv6n3p8rotspk',
+         'USER': 'sbxpvhhodutagr',
+         'PASSWORD':'e71de558a36bf8c471d500881eb062f6dacd143c041068a3d61f68ad0ba11b04', 
+         'HOST': 'ec2-3-224-8-189.compute-1.amazonaws.com',
+         'PORT': '5432'
+        # 'ENGINE': 'django.db.backends.postgresql',
+        # 'NAME': 'testdb',
+        # 'USER': 'postgres',
+        # 'PASSWORD':'8726', 
+        # 'HOST': 'localhost'
     }    
 }
 
          
-        # 'ENGINE': 'django.db.backends.postgresql',
-        # 'NAME': 'dv6n3p8rotspk',
-        # 'USER': 'sbxpvhhodutagr',
-        # 'PASSWORD':'e71de558a36bf8c471d500881eb062f6dacd143c041068a3d61f68ad0ba11b04', 
-        # 'HOST': 'ec2-3-224-8-189.compute-1.amazonaws.com',
-        # 'PORT': '5432'
+         
     
 
 
